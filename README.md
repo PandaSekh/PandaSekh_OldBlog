@@ -1,9 +1,12 @@
-[![Visits Badge](https://badges.pufler.dev/visits/PandaSekh/PandaSekh)](https://alessiofranceschi.me)
-
-### Welcome!
 ![Bonjour](https://i.redd.it/ayih4qogh2a51.png)
 
-⚡ Currently working on: Moving my Book Review blog from Wordpress to a Next.js app.
+## Hello there!
+[![Visits Badge](https://badges.pufler.dev/visits/PandaSekh/PandaSekh)](https://alessiofranceschi.me)
+
+I like stats and I usually don't know what to say about me, so here's some stats and very little info.
+
+⚡ Currently working on: Moving my Book Review blog from Wordpress to a Next.js app.  
+🤔 Future Projects: Learn RxJS and AngularJS
 
 ---
 
