@@ -11,3 +11,6 @@ I like stats and I usually don't know what to say about me, so here's some stats
 ---
 
 [![PandaSekh's Stats](https://github-readme-stats.vercel.app/api?username=PandaSekh)](https://alessiofranceschi.me)
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
