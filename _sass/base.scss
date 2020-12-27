@@ -8,7 +8,13 @@ $light-grey: #ebebeb;
 }
 html{
   scroll-behavior: smooth;
+  height: 100%;
 }
+
+body{
+  height: 100%;
+}
+
 .container {
     margin-left: auto;
     margin-right: auto;

@@ -27,16 +27,11 @@
             }
         }
     }
-    #post-title{
-        text-align: center;
-    }
 
     p{
         font-size: 1.2rem;
     }
-    .post-info{
-        text-align: center;
-    }
+    
     ::-webkit-scrollbar {
         height: 3px;
       }
@@ -47,5 +42,8 @@
     pre .highlight{
         padding-left: 8px;
         padding-right: 0px;
+    }
+    .icon{
+        width: 25px;
     }
 }
