@@ -6,25 +6,6 @@
     border-radius: $amount; 
 }
 
-.featured-img-container{
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    img{
-        max-width: 100%;
-        height: auto;
-        max-height: 450px;
-        @include border(7px);
-    }
-    video{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 15px;
-        max-width: 100%;
-        @include border(7px);
-    }
-}
-
 .continue-reading{
     a{
         color: $base;
