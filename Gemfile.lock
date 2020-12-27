@@ -97,10 +97,13 @@ PLATFORMS
   universal-darwin-20
 
 DEPENDENCIES
-  bundler (~> 2.2.3)
+  bundler (~> 2.2.1)
   jekyll
   jekyll-admin
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-yamt!
   rake (~> 12.0)
+
+BUNDLED WITH
+   2.2.3
