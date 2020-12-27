@@ -1,0 +1,41 @@
+#Google Analytics
+analytics-id: UA-157926257-1
+
+#Subtitle
+subtitle:
+  active: false
+  text:
+
+#Nav 
+nav:
+  pages:
+    active: true
+  social:
+    active: true
+
+#Featured images in homepage
+featured-img:
+  active: false
+
+excerpt:
+  active: false
+
+#Show categories at the end of posts
+categories:
+  active: true
+
+#Show date and read time under the post title
+date-under-post:
+  active: true
+
+#Use MathJAX
+mathjax:
+  active: false
+
+#Show related posts based on categories
+related-posts:
+  active: false
+  title: "You May Also Enjoy"
+
+#Comments
+comments: true
