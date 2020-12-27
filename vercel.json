@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
   "github": {
-    "silent": true
+    "silent": false
   },
   "collectMetrics": false
 }
