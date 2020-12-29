@@ -11,7 +11,7 @@ author:
 permalink: /:title/
 
 #Plugins
-plugins: [jekyll-admin, jekyll-seo-tag, jekyll-sitemap]
+plugins: [jekyll-seo-tag, jekyll-sitemap]
 
 #SEO
 twitter:
