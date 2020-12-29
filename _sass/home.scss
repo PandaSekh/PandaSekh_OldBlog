@@ -6,18 +6,6 @@
     border-radius: $amount; 
 }
 
-.continue-reading{
-    a{
-        color: $base;
-        text-decoration: none;
-        font-style: italic;
-        font-size: 0.96rem;
-    }
-    a:hover{
-        color: black;
-    }
-}
-
 .post-info{
     font-size: 1rem;
     color: $base;

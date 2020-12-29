@@ -72,3 +72,71 @@ article::after{
     margin: 30px auto;
     background-color: #d5d5d5;
 }
+
+.task-list{
+  list-style: none;
+}
+
+.alert{
+  padding: 20px;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  display: block;
+  font-size: larger;
+}
+
+.y{
+  background-color: #f3b244;
+  border-left: 7px solid #dc900e;
+}
+
+.g{
+  background-color: #60c17d;
+  border-left: 7px solid #55ab6f;
+}
+
+.r{
+  background-color: #e45454;
+  border-left: 7px solid #cb2020;
+}
+
+blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+  cite{
+    display: inline-block;
+    margin-top: 50px;
+    cite::before{
+      content: "- ";
+      margin-left: 10px;
+    }
+  }
+}
+
+#markdown-toc::before {
+  content: "Contents";
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+#markdown-toc {
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  padding: 1.5em;
+  list-style: disc;
+  display: inline-block;
+  background-color: $light-grey;
+  line-height: 25px;
+  li{
+    a{
+      text-decoration: none;
+    }
+    a:hover{
+      font-style: italic;
+    }
+  }
+  ul{
+    list-style: disc;
+  }
+}
