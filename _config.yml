@@ -8,7 +8,7 @@ author:
   name: "Alessio Franceschi"
   email: "alessiofranceschi2@gmail.com"
   url: "https://alessiofranceschi.me"
-permalink: /:title/
+permalink: /blog/:title/
 
 #Plugins
 plugins: [jekyll-seo-tag, jekyll-sitemap]
