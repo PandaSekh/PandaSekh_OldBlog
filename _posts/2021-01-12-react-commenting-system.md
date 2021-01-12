@@ -37,6 +37,7 @@ In the project folder, run the command `npm i -save @sanity/client` to install t
 
 ### Data Schemas
 The Comment Schema will include a name, an email, an image (more on that later), the comment itself and a boolean for it’s approved state. I previously said that all comments are approved by default, but I think that comments with urls should not, so I added this flag.
+For more information about the schemas for Sanity.io, check out [their documentation](https://www.sanity.io/docs/content-modelling).
 
 ```js
 export default {
@@ -280,7 +281,7 @@ export default (req, res) => {
 
 The new comment section is now complete! We can successfully create and save new comments.
 
-## Display Comments
+## Displaying the Comments
 To show comments, create a new folder in the `components` folder and call it `Comments`. Inside, we'll first create the component to show a single comment, so create a new file and call it `SingleComment.js`.
 This component will take a comment object from its parent and render it, simple as that. 
 ```jsx
@@ -369,13 +370,13 @@ export default function AllComments() {
 Now that we have all the comments in our state, we can easily render them
 
 ```jsx
-	const commentList = comments?.map(comment => {
-		return <Comment key={comment._id} comment={comment} />;
-	});
+const commentList = comments?.map(comment => {
+	return <Comment key={comment._id} comment={comment} />;
+});
 
-	return (
-		<ul>{commentList}</ul>
-	);
+return (
+	<ul>{commentList}</ul>
+);
 ```
 
 That's it! Add the `AllComments` component in the `index.js` file and now you can add and see comments with real-time updates!
