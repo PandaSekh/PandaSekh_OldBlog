@@ -256,3 +256,12 @@ figure.highlight pre code[data-lang]::before, div.highlight pre code[data-lang]:
   text-align: center;
   background-color: #49483e;
 }
+
+.highlighter-rouge{
+  background-color: #49483e;
+  color: #f8f8f2;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 1px 10px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
