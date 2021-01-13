@@ -381,4 +381,4 @@ return (
 
 That's it! Add the `AllComments` component in the `index.js` file and now you can add and see comments with real-time updates!
 
-In the next part, we'll add the nested comments funcionality and some other small features, like ReCaptcha v3 and Markdown spport.
+[In the second part]({% post_url 2021-01-13-react-commenting-system-part-2 %}), we'll add the nested comments funcionality and some other small features, like Markdown spport.
