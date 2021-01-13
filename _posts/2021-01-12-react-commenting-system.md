@@ -265,6 +265,10 @@ export default (req, res) => {
 			},
 		});
 		if (!doc.name) doc.name = "Anonymous";
+		
+		if (doc.comment.match(urlRegEx)) doc.approved = false;
+		else doc.approved = true;
+		
 		try {
 			client.create(document).then(() => {
 					resolve(
