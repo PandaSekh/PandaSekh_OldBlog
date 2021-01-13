@@ -33,7 +33,7 @@ After all this introductions, we can start our project.
 ## Project Setup
 With `npx create-next-app` we create the basic project structure. If you don’t know how Next.JS works, the [Getting Started](https://nextjs.org/docs) guide is amazing, but here’s a short introduction. Everything under the `pages` folder will be an actual page with the slug being the filename, while the files under `pages/api` will be serverless functions listening at `website.com/api/[name_of_file]`. To test your app, run the command ```npm run dev``` That’s all we need to know for this project.
 
-In the project folder, run the command `npm i -save @sanity/client` to install the Javascript Sanity Client, which will help us making queries to the dataset. Follow the on-screen prompts to create a new dataset. In the client folder, under the `schemas` folder we’ll create our two schemas, one for the comments and one for the reactions.
+In the project folder, run the command `npm i -save @sanity/client` to install the Javascript Sanity Client, which will help us make queries to the dataset. Follow the on-screen prompts to create a new dataset. In the client folder, under the `schemas` folder we’ll create our two schemas, one for the comments and one for the reactions.
 
 ### Data Schemas
 The Comment Schema will include a name, an email, an image (more on that later), the comment itself and a boolean for it’s approved state. I previously said that all comments are approved by default, but I think that comments with urls should not, so I added this flag.
@@ -218,7 +218,7 @@ const client = sanityClient({
 	token: WRITE_TOKEN,
 });
 ```
-You can get all those info in your Sanity Dashboard. For the token see [here](https://www.sanity.io/docs/keeping-your-data-safe#take-good-care-of-your-access-tokens-a99296355dc1).
+You can get all those infos in your Sanity Dashboard. For the token see [here](https://www.sanity.io/docs/keeping-your-data-safe#take-good-care-of-your-access-tokens-a99296355dc1).
 
 Now let’s add some helpers:
 
@@ -265,6 +265,10 @@ export default (req, res) => {
 			},
 		});
 		if (!doc.name) doc.name = "Anonymous";
+		
+		if (doc.comment.match(urlRegEx)) doc.approved = false;
+		else doc.approved = true;
+		
 		try {
 			client.create(document).then(() => {
 					resolve(
