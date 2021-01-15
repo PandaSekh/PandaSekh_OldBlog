@@ -1,5 +1,5 @@
 ---
-title: Emoji Reactions to Comments - Building a Real-Time Commenting System in React [Part 3/?]
+title: Emoji Reactions for Comments - Building a Real-Time Commenting System in React [Part 3/3]
 layout: post
 categories: [Next.js, Javascript, React, Sanity.io]
 description: "A series on how to build a fully features Commenting System in Next.js (React)"

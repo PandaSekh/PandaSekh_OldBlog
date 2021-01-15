@@ -1,5 +1,5 @@
 ---
-title: Building a Real-Time Commenting System in React [Part 2/?]
+title: Making Nested Comments - Building a Real-Time Commenting System in React [Part 2/3]
 layout: post
 categories: [Next.js, Javascript, React, Sanity.io]
 description: "A series on how to build a fully features Commenting System in Next.js (React)"
