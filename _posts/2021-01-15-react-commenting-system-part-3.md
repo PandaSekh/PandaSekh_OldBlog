@@ -17,7 +17,7 @@ The emojis should update real-time and be lightweight, as we don't want to slow 
 - Limited selection of Emojis (which is a great thing tbh, I'm going to explain why soon)
 - No skin color alternatives, everyone is a Simpson (again, great)
 
-This limitations are actually useful because every emoji is renderer with it's own counter and displayed near the comment and with 3,304 emojis currently existing it will become impossibile to render them all. Also, we can just use themed emojis. You want to use this in you cooking blog? Just add some cooking-related emojis to make your blog more fun.
+These limitations are actually useful because each emoji is rendered with it's own counter and displayed near the comment, and with 3,304 emojis currently existing it would become impossibile to render them all. Also, we can just choose to use themed emojis depending on the context. You want to use this in you cooking blog? Just add some cooking-related emojis to make your blog more fun.
 
 ## Data Schema
 We already created our data schema in the first article, so I'm just going to explain it's structure quickly. 
