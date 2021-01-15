@@ -7,11 +7,14 @@ description: "A series on how to build a fully features Commenting System in Nex
 
 In the [previous part of this series]({% post_url 2021-01-12-react-commenting-system %}) we created the foundations of this project and now we have a basic commenting system where we can create and display comments in real time. This time we're going to add some extra functionalities, like nested comments and markdown support.
 
+* hello
+{:toc}
+
 ## Nested Comments
 There are a lot of ways to do nested comments and some of them may work better than my method, but for what we need and use (real time updates and Sanity.io as dataset), I found this to be the best approach.
 
 ### How to do Nested Comments
-In the previous post we created a `Comment` schema which included an array of comments that we called `childComments`. To add a child comment, we're going to update the parent by appending to the array the child. If we want a nephew comment (never heard of this, but I'm going to use these words together anyway), we will update his parent comment same as before, and then we're going to update the parent comment (the granddad comment) with the updated child. I am confused too just by writing this, but I promise it's going to be easier when we actually start programming this. Long story short, when we add a child comment, we need to update its parent, then its grandparent and so on. This may seem inefficient, and it probably is for huge amounts of comments, but my objective wasn't building the new Facebook commenting system. My approach has some advantages: 
+In the previous post we created a `Comment` schema which included an array of comments that we called `childComments`. To add a child comment, we're going to update the parent by appending the child to the array. If we want a nephew comment (never heard of this, but I'm going to use these words together anyway), we will update his parent comment same as before, and then we're going to update the parent comment (the granddad comment) with the updated child. I am confused too just by writing this, but I promise it's going to be easier when we actually start programming this. Long story short, when we add a child comment, we need to update its parent, then its grandparent and so on. This may seem inefficient, and it probably is for huge amounts of comments, but my objective wasn't building the new Facebook commenting system. My approach has some advantages: 
  - We greatly reduce calls to the backend, because with a single query we get all the comments;
  - The comments are already nested in the backend, we only need to iterate them, not sort them;
  - Cleaner data in the backend, no need to have references everywhere.
@@ -67,7 +70,7 @@ const commentList = comments?.map(comment => {
 });
 ```
 
-Here we pass no `firstParentId`, meaning that those components have the variable undefined. Because of that, when we render the `AddComment` or all the child comments, we pass the comment id: `firstParentId={firstParentId || comment._id}`. Those child comments will have the `firstParentId` defined and will use that when creating new comments or showing children. This means that no matter how many children there are, they all have the `firstCommentId` props setted to the id of the first comment in the hierarchy. This sounds complicated, but it's just needed to perform an updated in the database when we create new comments, because Sanity.io can perform queries only on first level documents. If we have nested documents, like we do, even if those documents have an `_id`, a `_key` and a `_type`, they still can't be "searchable". That's why we have to do all of this "first parent" thing.
+Here we pass no `firstParentId`, meaning that those components have the variable undefined. Because of that, when we render the `AddComment` or all the child comments, we pass the comment id: `firstParentId={firstParentId || comment._id}`. Those child comments will have the `firstParentId` defined and will use that when creating new comments or showing children. This means that no matter how many children there are, they all have the `firstCommentId` props setted to the id of the first comment in the hierarchy. This sounds complicated, but it's just needed to perform an update in the database when we create new comments, because Sanity.io can perform queries only on first level documents. If we have nested documents, like we do, even if those documents have an `_id`, a `_key` and a `_type`, they still can't be "searchable". That's why we have to do all of this "first parent" thing.
 
 One last thing, let's add a custom class in case the comment is a child, so that later we can style it accordingly.
 ```jsx
@@ -400,5 +403,102 @@ import parser from "../../lib/snarkdown";
 	}}
 />
 ```
+
+## reCAPTCHA
+We're going to interate Google reCAPTCHA to avoid any spammy comments. 
+First, get an API key from [here](https://www.google.com/recaptcha/admin) and add it to your env (this is my suggested method and the most secure one, you can use what you prefer).
+Usually we should load the reCAPTCHA javascript in the head of our document, but I prefer to lazy-load things when possible. To do so, install a library I wrote to load the JS file only when e're loading the comments.
+```sh
+npm i @pandasekh/dynamic-script-loader
+```
+
+Now open the `/components/Comments/AllComments.js` file. We need to import the library and load reCAPTCHA's javascript in the `useEffect` hook.
+```jsx
+import load from "@pandasekh/dynamic-script-loader";
+
+[...]
+
+	useEffect(async () => {
+		
+		[...]
+
+		// Dynamically import Google reCAPTCHA
+		load(`https://www.google.com/recaptcha/api.js?render=YOUR_API_KEY`);
+		
+		[...]
+	}, []);
+```
+
+Now we have reCAPTCHA ready. Let's modify our `AddCommentForm.js` so that it generates a token for reCAPTCHA to verify in the backend.
+```jsx
+// components/AddComment/AddCommentForm.js
+
+[...]
+
+	const onSubmit = data => {
+		setIsSending(true);
+
+		if (parentCommentId) {
+			data.parentCommentId = parentCommentId;
+			data.firstParentId = firstParentId;
+		}
+
+		grecaptcha.ready(() => {
+			grecaptcha
+				.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, {
+					action: "submit",
+				})
+				.then(token => {
+					data.token = token;
+					fetch("/api/addComment", {
+						method: "POST", 
+						body: JSON.stringify(data)
+						}
+					).then(r => {
+						if (r.status === 200) {
+							setIsSending(false);
+						} else // handle errors;
+					})
+				}
+		}
+	}
+
+[...]
+```
+
+And finally, we just have to verify this token in the backend.
+
+```js
+// pages/api/sendComment.js
+
+[...]
+
+	const doc = JSON.parse(req.body);
+
+	// Check ReCaptcha Token
+	verifyRecaptchaToken(doc.token).then(isValidToken => {
+		if (!isValidToken) {
+			reject(res.status(406).end());
+		}
+	});
+
+	delete doc.token;
+
+[...]
+
+function verifyRecaptchaToken(token) {
+	return fetch("https://www.google.com/recaptcha/api/siteverify", {
+		method: "POST",
+		headers: { "Content-Type": "application/x-www-form-urlencoded" },
+		body: `secret=${YOUR_SECRET_LEY}&response=${token}`,
+	})
+		.then(r => r.json())
+		.then(j => {
+			return j.success;
+		});
+}
+
+```
+
 
 That's all for this post. In the next one we'll finally add some reactions to our comments!

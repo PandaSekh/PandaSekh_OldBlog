@@ -208,19 +208,23 @@ export default function AddCommentForm(){
 Import and add this Component in your `pages/index.js` file to use it. 
 
 ### Serverless Backend
-In `pages/api`, create a new file and call it `addComment.js`. Here we’ll create and add the new comment to Sanity. First of call, create a Sanity Client.
-
+First of call, create a Sanity Client. As we'll need this client in different places, let's create a file just for him.
 ```js
+// lib/sanityClient.js
+  
 const sanityClient = require("@sanity/client");
-const client = sanityClient({
-	projectId: YOUR_SANITY_PROJECT_ID,
-	dataset: YOUR_SANITY_DATASET,
-	token: WRITE_TOKEN,
+
+export const writeClient = sanityClient({
+	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+	dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+	token: process.env.SANITY_W_TOKEN,
+	useCdn: false,
 });
 ```
 You can get all those infos in your Sanity Dashboard. For the token see [here](https://www.sanity.io/docs/keeping-your-data-safe#take-good-care-of-your-access-tokens-a99296355dc1).
 
-Now let’s add some helpers:
+
+Now, in `pages/api`, create a new file and call it `addComment.js`. Here we’ll create and add the new comment to Sanity. 
 
 ```js
 // We need this to generate random keys both here and later when we’ll map React Components
@@ -270,7 +274,7 @@ export default (req, res) => {
 		else doc.approved = true;
 		
 		try {
-			client.create(document).then(() => {
+			writeClient.create(document).then(() => {
 					resolve(
 						res.status(200).json({ message: "Comment Created" })
 					);
@@ -334,6 +338,7 @@ The query asks for every approved comment ordered by creation date. We can alrea
 ```jsx
 import { useState, useEffect } from "react";
 import Comment from "./SingleComment"
+import { writeClient } from "../../lib/sanityClient";
 
 const query = `*[_type == "comment" && approved==true]{_id, comment, name, _createdAt, childComments} | order (_createdAt)`;
 
@@ -344,13 +349,13 @@ export default function AllComments() {
 	const [comments, setComments] = useState();
 
 	useEffect(async () => {
-		setComments(await client.fetch(query));
+		setComments(await writeClient.fetch(query));
 
 		// Subscribe to the query, listening to new updates
 		// If there's an update, add it to the comments state and sort it again
 		// The update might occur on a comment we already have in the state,
 		// so we should filter out that comment from the previous state
-		querySub = client.listen(query).subscribe(update => {
+		querySub = writeClient.listen(query).subscribe(update => {
 			if (update) {
 				setComments(comments =>
 					[
