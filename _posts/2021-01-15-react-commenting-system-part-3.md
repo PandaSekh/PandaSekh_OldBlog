@@ -614,3 +614,8 @@ If you have any doubts you can comment here or write me on my social media.
 
 Full repo: [GitHub](https://github.com/PandaSekh/React-Commenting-System).
 Demo [here](https://react-commenting-system.vercel.app/).
+
+Full Series:
+- 1/3 [Building a Real-Time Commenting System in React]({% post_url 2021-01-12-react-commenting-system %})
+- 2/3 [Making Nested Comments]({% post_url 2021-01-13-react-commenting-system-part-2 %})
+- 3/3 [Emoji Reactions for Comments]({% post_url 2021-01-15-react-commenting-system-part-3 %})

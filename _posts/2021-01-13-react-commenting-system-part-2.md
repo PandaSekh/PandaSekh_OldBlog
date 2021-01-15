@@ -502,3 +502,8 @@ function verifyRecaptchaToken(token) {
 
 
 That's all for this post. In the next one we'll finally add some reactions to our comments!
+
+Full Series:
+- 1/3 [Building a Real-Time Commenting System in React]({% post_url 2021-01-12-react-commenting-system %})
+- 2/3 [Making Nested Comments]({% post_url 2021-01-13-react-commenting-system-part-2 %})
+- 3/3 [Emoji Reactions for Comments]({% post_url 2021-01-15-react-commenting-system-part-3 %})
