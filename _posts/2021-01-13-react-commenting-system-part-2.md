@@ -146,7 +146,7 @@ try {
 
 If there's a parent comment id, then it is a child comment. We remove those two variables from the document, otherwise Sanity.io will have problems, and then call a function to append the child comment to the parent comment. The remaining code is the same as before.
 
-Now we need to create the function to actually append child comment. This function will require 3 parameters: the id of the first parent, the id of the parent comment and the child comment itself.
+Now we need to create the function to actually append the child comment. This function will require 3 parameters: the id of the first parent, the id of the parent comment and the child comment itself.
 Inside we get the first parent comment and append the child accordingly.
 
 ```jsx
