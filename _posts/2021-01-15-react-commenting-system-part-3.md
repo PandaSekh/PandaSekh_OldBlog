@@ -33,7 +33,7 @@ We already created our data schema in the first article, so I'm just going to ex
 Let's start making some components, starting from the basic ones and adding something to them in each step. Create a new folder in the `components` one to keep things tidy. I called mine simply `Emoji`.
 
 ### Emoji Component
-Basic component which will render an emoji with the correct attributes for accessibility, `role="img"` and `aria-label`.
+A basic component which will render an emoji with the correct attributes for accessibility, `role="img"` and `aria-label`.
 
 ```jsx
 // components/Emoji/Emoji.js
@@ -83,7 +83,7 @@ export default function EmojiWithCounter({emoji, emojiLabel, initialCounter, onI
 Pretty self-explanatory, this will render an Emoji with a counter on top of it. `onIncrease` is a callback for the `onClick` event.
 
 Before continuing I feel the need to explain the difference between these two components, because there might be some confusion on why I had to pass and call two different callbacks both for the `onClick` event.
-The difference is quite simple. As you saw in the screenshot in the beginning of the article, there will be a box with "unselected" emojis, and a row of selected emojis with a counter on them (see [the demo](https://react-commenting-system.vercel.app/) if this isn't clear). So, we'll use the `Emoji` component for the unselected emojis. It's callback will create a new object in the database and start it's counter at 1. Also, it will remove the emoji from the unselected box and move it to the row of selected ones. 
+The difference is quite simple. As you saw in the screenshot in the beginning of the article, there will be a box with "unselected" emojis, and a row of selected emojis with a counter on them (see [the demo](https://react-commenting-system.vercel.app/) if this isn't clear). So, we'll use the `Emoji` component for the unselected emojis. Its callback will create a new object in the database and start its counter at 1. Also, it will remove the emoji from the unselected box and move it to the row of selected ones. 
 The `EmojiWithCounter` is the component used to render the selected emojis.
 
 ![The Different Emojis](/assets/img/react-commenting/difference.png)
@@ -194,7 +194,7 @@ For the full code of this file see [the repo](https://github.com/PandaSekh/React
 ## Emoji Selection
 As said in the beginning of this article, we need to define ourselves the available emojis.
 
-Wherever you want create a file to hold an array of emojis that you want to use in your reactions.
+Wherever you want, create a file to hold an array of emojis that you want to use in your reactions.
 I created a `lib` folder and inside a `emojiConfig.js` file.
 
 ```js
@@ -609,7 +609,7 @@ emoji:active {
 ```
 
 ## Conclusion
-This series is now finished. I hoped it was useful for someone and that everything was -mostly- clear.
+This series is now finished. I hope it was useful for someone and that everything was -mostly- clear.
 If you have any doubts you can comment here or write me on my social media.
 
 Full repo: [GitHub](https://github.com/PandaSekh/React-Commenting-System).
