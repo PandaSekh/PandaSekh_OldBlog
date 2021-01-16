@@ -445,7 +445,7 @@ Now we have reCAPTCHA ready. Let's modify our `AddCommentForm.js` so that it gen
 
 		grecaptcha.ready(() => {
 			grecaptcha
-				.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, {
+				.execute(YOUR_SITE_KEY, {
 					action: "submit",
 				})
 				.then(token => {
@@ -490,7 +490,7 @@ function verifyRecaptchaToken(token) {
 	return fetch("https://www.google.com/recaptcha/api/siteverify", {
 		method: "POST",
 		headers: { "Content-Type": "application/x-www-form-urlencoded" },
-		body: `secret=${YOUR_SECRET_LEY}&response=${token}`,
+		body: `secret=${YOUR_SECRET_KEY}&response=${token}`,
 	})
 		.then(r => r.json())
 		.then(j => {
