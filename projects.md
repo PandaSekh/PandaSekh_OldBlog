@@ -12,5 +12,6 @@ title: Projects
 * [Link Aggregator](https://github.com/PandaSekh/Link-Aggregator). A simple link aggregator. Useful for Instagram or Podcasts.
 
 ## Tools
+* [Dynamic Script Loader](https://github.com/PandaSekh/Dynamic-Script-Loader). Tiny (~300B) library to dynamically load js files only when they're needed.
 * [Url Safety Scanner](https://github.com/PandaSekh/Url-Safety-Scanner). Npm package to check if a url is safe or malicious.
 * [PDF to CBR Converter](https://github.com/PandaSekh/Bulk-PDFtoCBR). Python script to bulk convert comics in PDF format to CBR format.
