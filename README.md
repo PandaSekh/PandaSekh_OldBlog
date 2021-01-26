@@ -5,7 +5,7 @@
 
 I like stats and I usually don't know what to say about me, so here's some stats and very little info.
 
-⚡ Currently working on: Moving my Book Review blog from Wordpress to Next.js.  
+⚡ Currently working on: Full redesign of my website.  
 🤔 Future Projects: Learn RxJS and AngularJS
 
 ---
