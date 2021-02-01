@@ -3,7 +3,7 @@
 ## Hello there!
 [![Visits Badge](https://badges.pufler.dev/visits/PandaSekh/PandaSekh)](https://alessiofranceschi.me)
 
-I'm Alessio 😀 a 20-something developer. I like stats and I usually don't know what to say about me, so here's some stats and very little info.
+I'm Alessio 😀. I like stats and I usually don't know what to say about me, so here's some stats and very little info.
 
 ⚡ Currently working on: Full redesign of my website.  
 🤔 Future Projects: Learn RxJS and AngularJS
