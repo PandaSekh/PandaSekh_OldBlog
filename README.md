@@ -13,7 +13,7 @@ I'm Alessio 😀. I like stats and I usually don't know what to say about me, so
 <!--START_SECTION:waka-->
 **🐱 My Github Data** 
 
-> 🏆 229 Contributions in the Year 2021
+> 🏆 231 Contributions in the Year 2021
  > 
 > 📦 1.1 MB Used in Github's Storage 
  > 
