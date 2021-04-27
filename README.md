@@ -13,7 +13,7 @@ I'm Alessio 😀. I like stats and I usually don't know what to say about me, so
 <!--START_SECTION:waka-->
 **🐱 My Github Data** 
 
-> 🏆 321 Contributions in the Year 2021
+> 🏆 389 Contributions in the Year 2021
  > 
 > 📦 1.2 MB Used in Github's Storage 
  > 
@@ -21,7 +21,7 @@ I'm Alessio 😀. I like stats and I usually don't know what to say about me, so
  > 
 > 📜 12 Public Repositories 
  > 
-> 🔑 48 Private Repositories  
+> 🔑 49 Private Repositories  
  > 
 **I'm an Early 🐤** 
 
@@ -38,11 +38,11 @@ I'm Alessio 😀. I like stats and I usually don't know what to say about me, so
 
 ```text
 💬 Programming Languages: 
-JavaScript               8 hrs 49 mins       ███████████░░░░░░░░░░░░░░   43.55% 
-TypeScript               3 hrs 9 mins        ████░░░░░░░░░░░░░░░░░░░░░   15.62% 
-MDX                      2 hrs 52 mins       ███░░░░░░░░░░░░░░░░░░░░░░   14.21% 
-JSON                     2 hrs 31 mins       ███░░░░░░░░░░░░░░░░░░░░░░   12.43% 
-CSS                      1 hr 56 mins        ██░░░░░░░░░░░░░░░░░░░░░░░   9.61%
+JavaScript               8 hrs 16 mins       ████████░░░░░░░░░░░░░░░░░   31.52% 
+TypeScript               6 hrs 48 mins       ██████░░░░░░░░░░░░░░░░░░░   25.93% 
+MDX                      3 hrs 57 mins       ███░░░░░░░░░░░░░░░░░░░░░░   15.06% 
+JSON                     3 hrs 56 mins       ███░░░░░░░░░░░░░░░░░░░░░░   15.03% 
+CSS                      2 hrs 20 mins       ██░░░░░░░░░░░░░░░░░░░░░░░   8.94%
 
 ```
 
