@@ -5,8 +5,8 @@
 
 I'm Alessio 😀. I like stats and I usually don't know what to say about me, so here's some stats and very little info.
 
-⚡ Currently working on: Full redesign of my website.  
-🤔 Future Projects: Learn RxJS and AngularJS
+⚡ Currently working on: Full redesign of my website from Wordpress to Jamstack (Next.js, Styled Components, MDX, Serverless).  
+🤔 Future Projects: Social Cookbook and Automatic Meal Planner, currently a private repo because it's in an early stage.
 
 ---
 
