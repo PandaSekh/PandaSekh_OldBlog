@@ -38,7 +38,8 @@ I'm Alessio 😀. I like stats and I usually don't know what to say about me, so
 
 ```text
 💬 Programming Languages: 
-No Activity Tracked This Week
+TypeScript               7 mins              █████████████████████░░░░   84.29% 
+JavaScript               1 min               ████░░░░░░░░░░░░░░░░░░░░░   15.71%
 
 ```
 
@@ -55,5 +56,5 @@ CSS                      4 repos             █░░░░░░░░░░�
 
 
 
- Last Updated on 23/08/2021
+ Last Updated on 24/08/2021
 <!--END_SECTION:waka-->
