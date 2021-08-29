@@ -13,7 +13,7 @@ I'm Alessio 😀. I like stats and I usually don't know what to say about me, so
 <!--START_SECTION:waka-->
 **🐱 My Github Data** 
 
-> 🏆 1,078 Contributions in the Year 2021
+> 🏆 1,085 Contributions in the Year 2021
  > 
 > 📦 1.2 MB Used in Github's Storage 
  > 
@@ -26,9 +26,9 @@ I'm Alessio 😀. I like stats and I usually don't know what to say about me, so
 **I'm an Early 🐤** 
 
 ```text
-🌞 Morning    283 commits    ██████░░░░░░░░░░░░░░░░░░░   26.88% 
-🌆 Daytime    464 commits    ███████████░░░░░░░░░░░░░░   44.06% 
-🌃 Evening    292 commits    ███████░░░░░░░░░░░░░░░░░░   27.73% 
+🌞 Morning    287 commits    ██████░░░░░░░░░░░░░░░░░░░   27.26% 
+🌆 Daytime    465 commits    ███████████░░░░░░░░░░░░░░   44.16% 
+🌃 Evening    287 commits    ██████░░░░░░░░░░░░░░░░░░░   27.26% 
 🌙 Night      14 commits     ░░░░░░░░░░░░░░░░░░░░░░░░░   1.33%
 
 ```
@@ -55,5 +55,5 @@ CSS                      4 repos             █░░░░░░░░░░�
 
 
 
- Last Updated on 28/08/2021
+ Last Updated on 29/08/2021
 <!--END_SECTION:waka-->
