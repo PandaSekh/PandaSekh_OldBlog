@@ -38,7 +38,7 @@ I'm Alessio 😀. I like stats and I usually don't know what to say about me, so
 
 ```text
 💬 Programming Languages: 
-JSON                     23 mins             █████████████████████████   100.0%
+JSON                     1 min               █████████████████████████   100.0%
 
 ```
 
@@ -55,5 +55,5 @@ CSS                      4 repos             █░░░░░░░░░░�
 
 
 
- Last Updated on 07/09/2021
+ Last Updated on 08/09/2021
 <!--END_SECTION:waka-->
