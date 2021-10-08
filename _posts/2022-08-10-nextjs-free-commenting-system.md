@@ -108,6 +108,199 @@ export default interface Comment {
 ## Design the Comments Section
 Starting from the basics, we need a simple comments section. I won't cover css as it's out of the scope of this articles.
 
-In our `components` folder, let's create a folder `Comments` and a parent component that I'll call `CommentBlock.tsx`. This component is the one that will be imported in every post.
+### Single Comment Component
+In our `components` folder, let's create a folder `Comments` and a component called `Comment.tsx`. This component will render a single comment and its children.
+This structure is based on what I needed, but can be changed accordingly.
+
+```js
+import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
+import IComment from "@interfaces/Comment";
+import { decrypt, Hash } from "@lib/encryption/crypto";
+
+export default function Comment({
+  comment,
+  slug,
+}: {
+  comment: IComment;
+  slug: string;
+}): JSX.Element {
+  const [reply, setReply] = useState(false); // This state will manage the reply form
+  const AddComment = dynamic(() => import("./AddComment")); // No need to import this component if the user won't click on "Reply"
+
+  return (
+    <div
+			// If this is a child component, we apply a custom class. This is useful to offset child comments from the parent and make a hierachy effect
+      className={`${comment.parentCommentId ? "child" : ""}`}> 
+      <div>
+        <div>
+          <span>{comment.date}</span>
+          <span>{comment.username}</span>
+        </div>
+      </div>
+      <p>{comment.content}</p>{" "}
+      <button
+        type="button"
+        onClick={() => setReply(!reply)}
+      >
+        Reply
+      </button>
+			// If the reply button is clicked, render the <AddComment /> form (that we'll build next)
+      {reply && <AddComment slug={slug} parentCommentId={comment.id} />}
+      // If there is any child comment, render those too
+			{comment.children &&
+        comment.children.map((child, index) => (
+          <Comment comment={child} slug={slug} key={index} />
+        ))}
+    </div>
+  );
+}
+```
+
+### Add Comment Form
+Then, we need to create the AddComment component that will render a form to create new comments or replies.
+I'm using `react-hook-form` to create the forms, but you can use whatever you prefer.
+
+```js
+import { useEffect, useState } from "react";
+import {
+  DeepMap,
+  FieldError,
+  SubmitHandler,
+  useForm,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+import { getKey } from "@lib/utils";
+import IComment from "@interfaces/Comment";
+
+export default function AddComment({
+  slug,
+  parentCommentId,
+}: {
+  slug: string;
+  parentCommentId?: string;
+}): JSX.Element {
+  const [commentSent, setCommentSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>();
+
+  function sendData(data: FormData) {
+    setIsLoading(true);
+
+		// Prepare the new comment data
+		const newComment: IComment = {
+			date: new Date().toLocaleDateString("en-US"), // p
+			parentCommentId: parentCommentId || undefined, // If this new comment has a parent, put the id here
+			id: generateUUID(), // generate the unique id here however you want
+			username: data.username || "Anonymous",
+			email: data.email,
+			content: data.content,
+			children: [],
+		};
+
+		// Send the new comment to an API endpoint we'll build later. It's important to pass the slug parameter and I'm doing that with a path parameter
+		fetch(`/api/putComment/${slug}`, {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(newComment),
+		})
+			.then((res) => {
+				if (res.ok) {
+					// Comment was sent
+					setCommentSent(true);
+					setIsLoading(false);
+					reset({ username: "", email: "", content: "" });
+				}
+			})
+			.catch(() => {
+				setCommentSent(true);
+				setIsLoading(false);
+				// handle the error
+			});
+  }
+
+  const onSubmit: SubmitHandler<FormData> = (data) => sendData(data);
+
+  return (
+    <>
+      {!isLoading && !commentSent && (
+        <CommentForm
+          onSubmit={onSubmit}
+          register={register}
+          handleSubmit={handleSubmit}
+          errors={errors}
+        />
+      )}
+      {isLoading && (
+       	<p>Loading...</p>
+      )}
+    </p>
+  );
+}
+```
+
+The <CommentForm /> component is a basic `react-hook-form` form and it can be done however you want.
+
+### Full Comment Block
+This component is the one that will be imported in every post.
 `CommentBlock` will require two props: `slug` and `comments`. 
 `slug` is the slug of the post we're in and will be used to create new comments, while `comments` is an array of comments retrieved in the page using `GetStaticProps` or `GetServerSideProps`, depending on our preference.
+
+```js
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import IComment from "@interfaces/Comment";
+
+export default function CommentBlock({
+  slug,
+  comments,
+}: {
+  slug: string;
+  comments: Array<IComment> | null;
+}): JSX.Element {
+	// Dynamically import everything to reduce the first load of a page. Also, there might be no comments at all.
+  const Comment = dynamic(() => import("./Comment"));
+  const AddComment = dynamic(() => import("./AddComment"));
+  const [showAddComment, setShowAddComment] = useState(false);
+
+  return (
+		<div>
+			<p>Comments</p>
+			{comments ? (
+				comments.map((c) => (
+					<Comment comment={c} key={getKey()} slug={slug} />
+				))
+			) : (
+				<p>
+					There are no comments.
+				</p>
+			)}
+			{showAddComment ? (
+				<AddComment slug={slug} />
+			) : (
+				<div>
+					<button
+						type="submit"
+						onClick={() => setShowAddComment(true)}
+					>
+						Comment
+					</button>
+				</div>
+			)}
+		</div>
+  );
+}
+```
+
+## Conclusions
+
+We just finished preparing the basic React structure of the commenting systems. Right now we just need to import the CommentBlock component where we want to display comments.
+In the next article we'll build the APIs that will interface with Github in order to store and retrieve the comments.
