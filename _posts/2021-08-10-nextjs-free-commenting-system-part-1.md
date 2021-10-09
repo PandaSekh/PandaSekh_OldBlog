@@ -307,5 +307,5 @@ We just finished preparing the basic React structure of the commenting systems. 
 In the next article we'll build the APIs that will interface with Github in order to store and retrieve the comments.
 
 Full Series:
-- 1/2 [NextJS Free Commenting System using Github]({% post_url 2022-08-10-nextjs-free-commenting-system-part-1 %})
-- 2/2 [NextJS Free Commenting System using Github]({% post_url 2022-08-10-nextjs-free-commenting-system-part-2 %})
+- 1/2 [NextJS Free Commenting System using Github]({% post_url 2021-08-10-nextjs-free-commenting-system-part-1 %})
+- 2/2 [NextJS Free Commenting System using Github]({% post_url 2021-09-10-nextjs-free-commenting-system-part-2 %})
