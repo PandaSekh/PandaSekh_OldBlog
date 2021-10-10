@@ -5,7 +5,7 @@ categories: [Next.js, Javascript, React, Github, Comments]
 description: "How to build a fully functional commenting system hosted on Github for free."
 ---
 
-In a recent project of mine built with NextJS I wanted to implement a simple but functional commenting system. While I [already did a commenting system](https://alessiofranceschi.me/blog/react-commenting-system), it was using an external CMS (Sanity.io). Sanity is great, but for this project I had two different goals: 
+In a recent project of mine built with NextJS and hosted on Vercel I wanted to implement a simple but functional commenting system. While I [already did a commenting system](https://alessiofranceschi.me/blog/react-commenting-system), it was using an external CMS (Sanity.io). Sanity is great, but for this project I had two different goals: 
 - I wanted it to be totally free, without limits
 - I wanted total control over the data
 
@@ -307,5 +307,5 @@ We just finished preparing the basic React structure of the commenting systems. 
 In the next article we'll build the APIs that will interface with Github in order to store and retrieve the comments.
 
 Full Series:
-- 1/2 [NextJS Free Commenting System using Github]({% post_url 2021-08-10-nextjs-free-commenting-system-part-1 %})
-- 2/2 [NextJS Free Commenting System using Github]({% post_url 2021-09-10-nextjs-free-commenting-system-part-2 %})
+- 1/2 [NextJS Free Commenting System using Github]({% post_url 2021-10-08-nextjs-free-commenting-system-part-1 %})
+- 2/2 [NextJS Free Commenting System using Github]({% post_url 2021-10-09-nextjs-free-commenting-system-part-2 %})
