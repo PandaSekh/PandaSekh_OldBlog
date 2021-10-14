@@ -1,5 +1,5 @@
 ---
-title: A Post-Mortem of my First Game-Jam
+title: Post-Mortem of my First Game-Jam
 layout: post
 categories: [Unity, C#, Game Design]
 description: "A Post-Mortem analysis on my first game jam experience."
