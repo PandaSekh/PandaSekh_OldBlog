@@ -20,6 +20,9 @@ The features of this commenting system are:
 
 It this series of articles I'll illustrate how I managed to use Github as my comments database for a NextJS - and typescript - commenting system.
 
+* hello
+{:toc}
+
 ## Basic Utils
 First of all, we need to create some basic utils that we'll use later on.
 

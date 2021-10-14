@@ -7,6 +7,9 @@ description: "How to build a fully functional commenting system hosted on Github
 
 In the previous article we built the basic interface for our commenting system. Now we need to program the API endpoints to communicate with Github's API in order to save and retrieve the comments.
 
+* hello
+{:toc}
+
 ## Save Comments
 Let's start by saving some comment. In the `pages/api` path, let's create a new folder named `comments`, inside of which we'll create another folder named `save` and finally inside that a file named `[slug].ts`. Of course you can change the naming as you wish. You can also create a single path (for example, `/api/comment`) and then call different functions depending on the method used.
 To save a comment, we need to:
