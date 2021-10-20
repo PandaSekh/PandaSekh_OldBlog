@@ -1,60 +1,13 @@
-![Bonjour](https://i.redd.it/ayih4qogh2a51.png)
-
-## Hello there!
+## Ciao 👋
 [![Visits Badge](https://badges.pufler.dev/visits/PandaSekh/PandaSekh)](https://alessiofranceschi.me)
 
-I'm Alessio 😀. I like stats and I usually don't know what to say about me, so here's some stats.
+I'm Alessio, a Software Developer from Italy.
 
----
+## Find Me Here 
+- [🌍 Website](https://alessiofranceschi.dev/)
+- [👨‍💻 LinkedIn](https://www.linkedin.com/in/alessio-franceschi/)
+- [✍ Medium](https://pandasekh.medium.com/)
 
-<!--START_SECTION:waka-->
-**🐱 My GitHub Data** 
-
-> 🏆 1,149 Contributions in the Year 2021
- > 
-> 📦 1.2 MB Used in GitHub's Storage 
- > 
-> 🚫 Not Opted to Hire
- > 
-> 📜 14 Public Repositories 
- > 
-> 🔑 38 Private Repositories  
- > 
-**I'm an Early 🐤** 
-
-```text
-🌞 Morning    281 commits    ██████░░░░░░░░░░░░░░░░░░░   27.07% 
-🌆 Daytime    444 commits    ██████████░░░░░░░░░░░░░░░   42.77% 
-🌃 Evening    300 commits    ███████░░░░░░░░░░░░░░░░░░   28.9% 
-🌙 Night      13 commits     ░░░░░░░░░░░░░░░░░░░░░░░░░   1.25%
-
-```
-
-
-📊 **This Week I Spent My Time On** 
-
-```text
-💬 Programming Languages: 
-Markdown                 43 mins             ███████████░░░░░░░░░░░░░░   46.46% 
-TypeScript               13 mins             ███░░░░░░░░░░░░░░░░░░░░░░   14.05% 
-Text                     11 mins             ███░░░░░░░░░░░░░░░░░░░░░░   12.26% 
-CSV                      10 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   10.77% 
-JSON                     8 mins              ██░░░░░░░░░░░░░░░░░░░░░░░   9.33%
-
-```
-
-**I Mostly Code in Java** 
-
-```text
-Java                     11 repos            ████░░░░░░░░░░░░░░░░░░░░░   18.03% 
-JavaScript               11 repos            ████░░░░░░░░░░░░░░░░░░░░░   18.03% 
-TypeScript               11 repos            ████░░░░░░░░░░░░░░░░░░░░░   18.03% 
-HTML                     7 repos             ██░░░░░░░░░░░░░░░░░░░░░░░   11.48% 
-CSS                      4 repos             █░░░░░░░░░░░░░░░░░░░░░░░░   6.56%
-
-```
-
-
-
- Last Updated on 19/10/2021
-<!--END_SECTION:waka-->
+## Latest Blog Posts
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
