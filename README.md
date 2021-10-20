@@ -3,10 +3,7 @@
 ## Hello there!
 [![Visits Badge](https://badges.pufler.dev/visits/PandaSekh/PandaSekh)](https://alessiofranceschi.me)
 
-I'm Alessio 😀. I like stats and I usually don't know what to say about me, so here's some stats and very little info.
-
-⚡ Currently working on: Full redesign of my website from Wordpress to Jamstack (Next.js, Styled Components, MDX, Serverless).  
-🤔 Future Projects: Social Cookbook and Automatic Meal Planner, currently a private repo because it's in an early stage.
+I'm Alessio 😀. I like stats and I usually don't know what to say about me, so here's some stats.
 
 ---
 
