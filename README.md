@@ -1,7 +1,7 @@
 ## Ciao 👋
 [![Visits Badge](https://badges.pufler.dev/visits/PandaSekh/PandaSekh)](https://alessiofranceschi.me)
 
-I'm Alessio, a Software Developer from Italy.
+I'm Alessio, a Software Developer from Italy 🍕.
 
 ## Find Me Here 
 - [🌍 Website](https://alessiofranceschi.dev/)
