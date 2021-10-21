@@ -5,7 +5,7 @@ I'm Alessio, a Software Developer from Italy.
 
 ## Find Me Here 
 - [🌍 Website](https://alessiofranceschi.dev/)
-- [👨‍💻 LinkedIn](https://www.linkedin.com/in/alessio-franceschi/)
+- [🤝 LinkedIn](https://www.linkedin.com/in/alessio-franceschi/)
 - [✍ Medium](https://pandasekh.medium.com/)
 
 ## Latest Blog Posts
