@@ -10,7 +10,7 @@ import { useRouter } from "next/dist/client/router";
 import UnderPost from "@components//Post/Underpost";
 import { getTimeToRead } from "src/utils";
 import dynamic from "next/dynamic";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const components = {
   TableOfContents: dynamic(() => import("@components//Post/TableOfContents")),
@@ -21,8 +21,8 @@ const components = {
 export default function Page({source, frontMatter, ttr}: Props){
 	const router = useRouter();
 
-  // const [loaded, setLoaded] = useState(false);
-  // useEffect(() => setLoaded(true), [])
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => setLoaded(true), [])
 
 	return (
     <>
@@ -44,7 +44,7 @@ export default function Page({source, frontMatter, ttr}: Props){
 				<UnderPost publishedDate={frontMatter.publishedDate} ttr={ttr}/>
         <div className="prose prose-lg mx-auto" >
 					<MDXRemote {...source} components={components} />
-          {/* {loaded && (
+          {loaded && (
             <script src="https://utteranc.es/client.js"
               //@ts-ignore
               repo="PandaSekh/PandaSekh"
@@ -54,7 +54,7 @@ export default function Page({source, frontMatter, ttr}: Props){
               crossOrigin="anonymous"
               async 
             />
-          )} */}
+          )}
         </div>
       </article>
       {/* Import the css like this because I only want to import it in posts and we can't make a css module file */}
