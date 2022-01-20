@@ -13,7 +13,7 @@ export default function About(): JSX.Element {
 	/>
 	<h2>About</h2>
 	<p>
-		I spend most of my time programming and reading. Other than that, I'm passionate about:
+		I spend most of my time programming and reading. Other than that, I&apos;m passionate about:
 	</p>
 		<ul>
 			<li>Writing</li>
