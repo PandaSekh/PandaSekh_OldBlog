@@ -11,12 +11,21 @@ import UnderPost from "@components//Post/Underpost";
 import { getTimeToRead } from "src/utils";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import TableOfContents from "@components//Post/TableOfContents";
+import Link from "next/link";
+import Image from "../../components/Post/Image";
 
 const components = {
-  TableOfContents: dynamic(() => import("@components//Post/TableOfContents")),
-  Link: dynamic(() => import("next/link")),
-  Image: dynamic(() => import("../../components/Post/Image"))
+  TableOfContents: TableOfContents,
+  Link: Link,
+  Image: Image
 };
+
+// const components = {
+//   TableOfContents: dynamic(() => import("@components//Post/TableOfContents")),
+//   Link: dynamic(() => import("next/link")),
+//   Image: dynamic(() => import("../../components/Post/Image"))
+// };
 
 export default function Page({source, frontMatter, ttr}: Props){
 	const router = useRouter();
