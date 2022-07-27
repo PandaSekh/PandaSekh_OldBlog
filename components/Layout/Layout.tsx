@@ -11,7 +11,7 @@ import { useEffect } from "react";
 export default function Layout({
   children,
 }: {
-  children: { props: AppProps };
+  children: any;
   }): JSX.Element {
     useEffect(() => {
       Router.events.on("routeChangeStart", () => NProgress.start());

@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps, router}: AppProps) {
   return (
     <>
       <Layout>
-        <Component {...pageProps} router={router}/>
+        <Component {...pageProps} router={router} />
       </Layout>
       <style jsx global>
           {`

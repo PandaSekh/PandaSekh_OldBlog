@@ -9,7 +9,6 @@ import { NextSeo } from "next-seo";
 import { useRouter } from "next/dist/client/router";
 import UnderPost from "@components//Post/Underpost";
 import { getTimeToRead } from "src/utils";
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import TableOfContents from "@components//Post/TableOfContents";
 import Link from "next/link";
@@ -20,12 +19,6 @@ const components = {
   Link: Link,
   Image: Image
 };
-
-// const components = {
-//   TableOfContents: dynamic(() => import("@components//Post/TableOfContents")),
-//   Link: dynamic(() => import("next/link")),
-//   Image: dynamic(() => import("../../components/Post/Image"))
-// };
 
 export default function Page({source, frontMatter, ttr}: Props){
 	const router = useRouter();
@@ -382,8 +375,7 @@ export async function getStaticProps({
       mdxOptions: {
         //@ts-ignore
         remarkPlugins: [remarkSlug, prism],
-        rehypePlugins: [],
-        compilers: [],
+        rehypePlugins: []
       },
     });
 

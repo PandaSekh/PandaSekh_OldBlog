@@ -14,10 +14,7 @@ export default function Projects(): JSX.Element {
      <h2>Projects</h2>
 	 <p>
 		All of my projects are publicy available on my <a href="https://github.com/PandaSekh">Github Page</a>.    
-
-		Below a showcase of some of them.
 	 </p>
-	 <p className="italic">Work in Progress</p>
     </div>
   );
 }
